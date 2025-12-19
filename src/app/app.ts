@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { ProductosComponent } from './productos/productos.component';
 
-
 @Component({
   selector: 'app-root',
   imports: [ProductosComponent],

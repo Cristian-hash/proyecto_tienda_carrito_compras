@@ -1,0 +1,11 @@
+<h2>Carrito</h2>
+
+<ul>
+  <li *ngFor="let item of items">
+    {{ item.nombre }}
+  </li>
+</ul>
+
+<p>Total: {{ total }}</p>
+
+<button (click)="saberTotal()">Recalcular total</button>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../models/producto.model';
-import { ProductItemComponent } from "../product-item.component/product-item.component";
-
+import { ProductItemComponent } from '../product-item.component/product-item.component';
+import { CartService } from '../services/cart.service';
 @Component({
   selector: 'app-products.component',
   imports: [ProductItemComponent],
@@ -9,8 +9,22 @@ import { ProductItemComponent } from "../product-item.component/product-item.com
   styleUrl: './products.component.css',
 })
 export class ProductsComponent {
-  counter=0;
-  onAddProduct(product: Product ){
-    this.counter++;
+  productos = [
+    { nombre: 'Laptop', precio: 2500 },
+
+    { nombre: 'Mouse', precio: 50 },
+
+    { nombre: 'Teclado', precio: 120 },
+  ];
+
+  constructor(private cartService: CartService) {}
+  counter = 0;
+
+  onAddProduct(product: Product) {
+    this.cartService.add(product);
+  }
+
+  agregar(product: any) {
+    console.log(product);
   }
 }

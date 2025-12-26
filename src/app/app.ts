@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { ProductosComponent } from './productos/productos.component';
-
+import { ProductsComponent } from './products.component/products.component';
 @Component({
   selector: 'app-root',
-  imports: [ProductosComponent],
+  standalone: true,
+  imports: [ProductsComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('mini-tienda');

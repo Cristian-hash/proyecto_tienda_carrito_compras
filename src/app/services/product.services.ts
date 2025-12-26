@@ -1,18 +1,14 @@
-import { Injectable } from "@angular/core";
-import { Product } from "../models/producto.model";
+import { Injectable } from '@angular/core';
+import { Product } from '../models/producto.model';
 
+@Injectable({ providedIn: 'root' })
+export class ProductService {
+  private products: Product[] = [
+    { id: 1, nombre: 'CPU', precio: 4, cantidad: 7 },
+    { id: 2, nombre: 'Monitor', precio: 2, cantidad: 4 },
+  ];
 
-@Injectable ({providedIn:'root'})
-
-
-export class ProductService{
-
-    private products : Product[]=[
-        {id :1 ,nombre:'2',precio: 4,cantidad: 7},
-        {id :1 ,nombre:'2',precio: 4,cantidad: 7}
-    ];
-
-    getProducts(): Product[]{
-        return this.products;
-    }
+  getProducts(): Product[] {
+    return this.products;
+  }
 }

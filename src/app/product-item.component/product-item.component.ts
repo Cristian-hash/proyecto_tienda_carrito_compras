@@ -3,9 +3,10 @@ import { Product } from '../models/producto.model';
 
 @Component({
   selector: 'app-product-item',
+  standalone: true,
   imports: [],
   templateUrl: './product-item.component.html',
-  styleUrl: './product-item.component.css',
+  styleUrls: ['./product-item.component.css'],
 })
 export class ProductItemComponent {
   @Input() product!: Product;

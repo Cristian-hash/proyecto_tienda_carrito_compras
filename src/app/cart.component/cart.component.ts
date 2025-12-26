@@ -28,7 +28,7 @@ export class CartComponent {
     this.saberTotal();
   }
   vaciar() {
-    this.cartService.empty;
+    this.cartService.empty();
     this.items = this.cartService.getItems();
     this.saberTotal();
   }

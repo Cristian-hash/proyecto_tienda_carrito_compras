@@ -4,11 +4,11 @@ import { ProductItemComponent } from './product-item.component/product-item.comp
 import { CartComponent } from './cart.component/cart.component';
 export const routes: Routes = [
   {
-    path: '/productos',
+    path: 'productos',
     component: ProductsComponent,
   },
   {
-    path: '/carrito',
+    path: 'carrito',
     component: CartComponent,
   },
 ];

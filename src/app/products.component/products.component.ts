@@ -7,26 +7,31 @@ import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
 @Component({
   selector: 'app-products',
+  standalone: true,
   imports: [ProductItemComponent],
   templateUrl: './products.component.html',
-  styleUrl: './products.component.css',
+  styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent {
   products = [];
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private productService: ProductService) {}
   counter = 0;
 
-  onAddProduct(product: Product) {
-    this.cartService.add(product);
+  ngOnInit() {
+    this.mostrar();
   }
 
-  agregar(product: any) {
-    console.log(product);
-  }
   mostrar(): void {
     this.productService.getProducts().subscribe((datos) => {
       this.products = datos;
     });
+  }
+
+  onAddProduct(product: Product) {
+    this.cartService.add(product);
+  }
+  agregar(product: any) {
+    console.log(product);
   }
 }

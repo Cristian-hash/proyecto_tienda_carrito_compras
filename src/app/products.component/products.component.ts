@@ -13,7 +13,7 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent {
-  products = [];
+  products: Product[] = [];
 
   constructor(private cartService: CartService, private productService: ProductService) {}
   counter = 0;

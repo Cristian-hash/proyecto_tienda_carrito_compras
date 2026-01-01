@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Product } from '../models/producto.model';
+import { Product } from '../models/product.model';
 import { ProductItemComponent } from '../product-item.component/product-item.component';
 import { CartService } from '../services/cart.service';
-import { ProductService } from '../services/product.services';
+import { ProductService } from '../services/product.service';
 import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
 @Component({
@@ -31,6 +31,7 @@ export class ProductsComponent {
   onAddProduct(product: Product) {
     this.cartService.add(product);
   }
+
   agregar(product: any) {
     console.log(product);
   }

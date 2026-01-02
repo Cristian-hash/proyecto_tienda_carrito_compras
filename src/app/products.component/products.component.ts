@@ -20,17 +20,17 @@ export class ProductsComponent {
   counter = 0;
 
   ngOnInit() {
-    this.mostrar();
+    this.loadProducts();
   }
 
-  mostrar(): void {
+  loadProducts(): void {
     this.productService.getProducts().subscribe((datos) => {
       this.products = datos;
       console.log('Productos cargados:', datos);
     });
   }
 
-  onAddProduct(product: Product) {
+  addToCart(product: Product) {
     this.cartService.add(product);
   }
 

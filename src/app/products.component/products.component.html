@@ -1,8 +1,4 @@
-<p>Total:{{counter}}</p>
+<p>Total:{{ counter }}</p>
 
-<app-product-item
-    *ngFor="let p of products"
-    [product]="p"
-    (add)="onAddProduct($event)"
->
+<app-product-item *ngFor="let p of products" [product]="p" (add)="addToCart($event)">
 </app-product-item>

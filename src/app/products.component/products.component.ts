@@ -13,7 +13,7 @@ import { OnInit } from '@angular/core';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
   products: Product[] = [];
 
   constructor(private cartService: CartService, private productService: ProductService) {}
@@ -32,9 +32,5 @@ export class ProductsComponent {
 
   addToCart(product: Product) {
     this.cartService.add(product);
-  }
-
-  agregar(product: any) {
-    console.log(product);
   }
 }

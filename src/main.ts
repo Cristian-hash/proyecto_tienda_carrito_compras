@@ -3,4 +3,4 @@ import { appConfig } from './app/app.config';
 import { App } from './app/app';
 
 bootstrapApplication(App, appConfig).catch((err) => console.error(err));
-//hoy entendi mejor la secuencia de padre e hijo y servicio.
+//hoy entendi mejor la secuencia de padre e hijo y servicio-codifica mas.

@@ -17,7 +17,6 @@ export class ProductsComponent implements OnInit {
   products: Product[] = [];
 
   constructor(private cartService: CartService, private productService: ProductService) {}
-  counter = 0;
 
   ngOnInit() {
     this.loadProducts();
@@ -26,11 +25,13 @@ export class ProductsComponent implements OnInit {
   loadProducts(): void {
     this.productService.getProducts().subscribe((datos) => {
       this.products = datos;
-      console.log('Productos cargados:', datos);
     });
   }
 
   addToCart(product: Product) {
     this.cartService.add(product);
+  }
+  get total(): number {
+    return this.cartService.getTotal();
   }
 }

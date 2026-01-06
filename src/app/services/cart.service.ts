@@ -9,6 +9,7 @@ export class CartService {
 
   add(product: Product) {
     this.items.push(product);
+    console.log('Carrito:', this.items);
   }
 
   remove(product: Product) {

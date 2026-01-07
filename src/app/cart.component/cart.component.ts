@@ -17,6 +17,7 @@ export class CartComponent {
   ngOnInit() {
     this.items = this.cartService.getItems();
     this.total = this.cartService.getTotal();
+    console.log('Items en carrito:', this.cartService.getItems());
   }
 
   saberTotal(): void {

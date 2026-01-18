@@ -9,7 +9,7 @@ export class CartService {
 
   add(product: Product) {
     this.items.push(product);
-    console.log('Carrito:', this.items);
+    // console.log('Carrito:', this.items);
   }
 
   remove(product: Product) {
@@ -21,7 +21,11 @@ export class CartService {
   }
 
   getTotal(): number {
-    return this.items.reduce((total, product) => total + product.precio, 0);
+    let total = 0;
+    for (let i = 0; i < this.items.length; i++) {
+      total = total + this.items[i].precio;
+    }
+    return total;
   }
 
   empty() {

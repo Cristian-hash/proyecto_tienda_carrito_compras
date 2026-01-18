@@ -31,7 +31,7 @@ export class ProductsComponent implements OnInit {
   addToCart(product: Product) {
     this.cartService.add(product);
   }
-  get total(): number {
+  gettotal(): number {
     return this.cartService.getTotal();
   }
 }

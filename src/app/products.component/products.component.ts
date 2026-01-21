@@ -15,8 +15,12 @@ import { OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
+  total: number = this.gettotal();
 
-  constructor(private cartService: CartService, private productService: ProductService) {}
+  constructor(
+    private cartService: CartService,
+    private productService: ProductService,
+  ) {}
 
   ngOnInit() {
     this.loadProducts();
@@ -30,6 +34,7 @@ export class ProductsComponent implements OnInit {
 
   addToCart(product: Product) {
     this.cartService.add(product);
+    this.total = this.gettotal();
   }
   gettotal(): number {
     return this.cartService.getTotal();

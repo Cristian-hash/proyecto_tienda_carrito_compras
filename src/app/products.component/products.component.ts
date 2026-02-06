@@ -15,7 +15,7 @@ import { OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
-  total: number = this.gettotal();
+  total: number = 0;
 
   constructor(
     private cartService: CartService,
@@ -23,6 +23,7 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.total = this.gettotal();
     this.loadProducts();
   }
 

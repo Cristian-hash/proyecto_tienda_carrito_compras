@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from '../models/product.model';
 import { CartService } from '../services/cart.service';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-cart',
   imports: [CommonModule],

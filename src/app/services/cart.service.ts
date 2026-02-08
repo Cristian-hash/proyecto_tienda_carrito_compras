@@ -5,6 +5,10 @@ import { Product } from '../models/product.model';
   providedIn: 'root',
 })
 export class CartService {
+  constructor() {
+    console.log('🛒 CartService creado');
+  }
+
   private items: Product[] = [];
 
   add(product: Product) {

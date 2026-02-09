@@ -6,7 +6,7 @@ import { Product } from '../models/product.model';
 })
 export class CartService {
   constructor() {
-    console.log('🛒 CartService creado');
+    console.log('🛒 CartService creado', Math.random());
   }
 
   private items: Product[] = [];

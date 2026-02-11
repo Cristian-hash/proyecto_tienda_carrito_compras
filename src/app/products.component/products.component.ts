@@ -49,6 +49,16 @@ export class ProductsComponent implements OnInit {
   addToCart(product: Product) {
     this.cartService.add(product);
     this.total = this.gettotal();
+    /* this.cartService.add(product).subscribe({
+      next: () => {
+        console.log('Producto agregado en servidor');
+        // Opcional: mostrar mensaje o actualizar contador visual
+      },
+      error: (err) => {
+        console.error('Error agregando al carrito', err);
+        // Opcional: notificar al usuario
+      },
+    });*/
   }
   gettotal(): number {
     return this.cartService.getTotal();

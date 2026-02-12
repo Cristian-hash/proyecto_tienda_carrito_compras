@@ -19,6 +19,7 @@ export class CartService {
   add(product: Product) /*: Observable<void>*/ {
     this.items.push(product);
     //return this.http.post<void>(`${this.base}/productos`, product);
+    //this.http.post('http://localhost:8080/carrito/productos',product)
   }
 
   remove(product: Product) {

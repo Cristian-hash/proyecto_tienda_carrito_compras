@@ -14,15 +14,19 @@ export class CartService {
     //console.log('🛒 CartService creado', Math.random());
   }
 
-   getItems() {
+  getItems() {
     return this.http.get<Product[]>(this.base);
   }
 
+  add(product: Product) {
+    return this.http.post(`${this.base}/productos`, product);
+  }
 
-
+  empty() {
+    return this.http.delete(this.base);
+  }
   //add(product: Product) /*: Observable<void>*/ {
   //  this.items.push(product);
-    //return this.http.post<void>(`${this.base}/productos`, product);
-    //this.http.post('http://localhost:8080/carrito/productos',product)
-  }
+  //return this.http.post<void>(`${this.base}/productos`, product);
+  //this.http.post('http://localhost:8080/carrito/productos',product)
 }

@@ -1,38 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
+//
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  constructor() {
-    console.log('🛒 CartService creado', Math.random());
+  private base = 'http://localhost:8080/carrito';
+
+  constructor(private http: HttpClient) {
+    //console.log('🛒 CartService creado', Math.random());
   }
 
-  private items: Product[] = [];
+  getItems() {
+    return this.http.get<Product[]>(this.base);
+  }
 
   add(product: Product) {
-    this.items.push(product);
-    // console.log('Carrito:', this.items);
-  }
-
-  remove(product: Product) {
-    this.items = this.items.filter((p) => p !== product);
-  }
-
-  getItems(): Product[] {
-    return this.items;
-  }
-
-  getTotal(): number {
-    let total = 0;
-    for (let i = 0; i < this.items.length; i++) {
-      total = total + this.items[i].price;
-    }
-    return total;
+    return this.http.post(`${this.base}/productos`, product);
   }
 
   empty() {
-    this.items = [];
+    return this.http.delete(this.base);
   }
+  //add(product: Product) /*: Observable<void>*/ {
+  //  this.items.push(product);
+  //return this.http.post<void>(`${this.base}/productos`, product);
+  //this.http.post('http://localhost:8080/carrito/productos',product)
 }

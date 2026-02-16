@@ -15,7 +15,7 @@ import { OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
-  total: number = 0;
+  //borrar total: number = 0;
 
   constructor(
     private cartService: CartService,
@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.total = this.gettotal();
+    //borrar   this.total = this.gettotal();
     this.loadProducts();
   }
 
@@ -45,12 +45,18 @@ export class ProductsComponent implements OnInit {
   });
 }  
   */
-
   addToCart(product: Product) {
+    this.cartService.add(product).subscribe({
+      next: () => console.log('Producto enviado al backend'),
+      error: (err) => console.error('Error:', err),
+    });
+  }
+
+  /* addToCart(product: Product) {
     this.cartService.add(product);
     this.total = this.gettotal();
-  }
-  gettotal(): number {
+  }*/
+  /* borrar gettotal(): number {
     return this.cartService.getTotal();
-  }
+  }*/
 }

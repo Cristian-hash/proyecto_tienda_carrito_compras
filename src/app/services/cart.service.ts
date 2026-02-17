@@ -10,23 +10,21 @@ import { Observable } from 'rxjs';
 export class CartService {
   private base = 'http://localhost:8080/carrito';
 
-  constructor(private http: HttpClient) {
-    //console.log('🛒 CartService creado', Math.random());
-  }
+  constructor(private http: HttpClient) {}
 
-  getItems() {
+  getItems(): Observable<Product[]> {
     return this.http.get<Product[]>(this.base);
   }
-
+  getTotal(): Observable<number> {
+    return this.http.get<number>(`${this.base}/total`);
+  }
+  remove(id: number) {
+    return this.http.delete(`${this.base}/${id}`);
+  }
   add(product: Product) {
     return this.http.post(`${this.base}/productos`, product);
   }
-
   empty() {
     return this.http.delete(this.base);
   }
-  //add(product: Product) /*: Observable<void>*/ {
-  //  this.items.push(product);
-  //return this.http.post<void>(`${this.base}/productos`, product);
-  //this.http.post('http://localhost:8080/carrito/productos',product)
 }

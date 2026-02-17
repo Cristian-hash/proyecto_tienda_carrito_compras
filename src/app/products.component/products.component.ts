@@ -32,31 +32,11 @@ export class ProductsComponent implements OnInit {
       this.products = datos;
     });
   }
-  /*
-  loadProducts(): void {
-  this.productService.getProducts().subscribe({
-    next: (datos) => {
-      console.log('DATOS:', datos);
-      this.products = datos;
-    },
-    error: (err) => {
-      console.error('ERROR BACKEND:', err);
-    }
-  });
-}  
-  */
+
   addToCart(product: Product) {
     this.cartService.add(product).subscribe({
       next: () => console.log('Producto enviado al backend'),
       error: (err) => console.error('Error:', err),
     });
   }
-
-  /* addToCart(product: Product) {
-    this.cartService.add(product);
-    this.total = this.gettotal();
-  }*/
-  /* borrar gettotal(): number {
-    return this.cartService.getTotal();
-  }*/
 }

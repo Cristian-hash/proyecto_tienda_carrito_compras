@@ -17,22 +17,21 @@ export class CartComponent {
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    this.items = this.cartService.getItems();
-    this.total = this.cartService.getTotal();
+    this.cartService.getItems().subscribe((data) => (this.items = data));
+    this.cartService.getTotal().subscribe((t) => (this.total = t));
     console.log('Items en carrito:', this.cartService.getItems());
   }
-
-  saberTotal(): void {
-    this.total = this.cartService.getTotal();
+  saberTotal() {
+    this.cartService.getTotal().subscribe((t) => (this.total = t));
   }
   eliminar(product: Product) {
-    this.cartService.remove(product);
-    this.items = this.cartService.getItems();
-    this.saberTotal();
+    this.cartService.remove(product.id).subscribe(() => {
+      this.ngOnInit();
+    });
   }
   vaciar() {
-    this.cartService.empty();
-    this.items = this.cartService.getItems();
-    this.saberTotal();
+    this.cartService.empty().subscribe(() => {
+      this.ngOnInit();
+    });
   }
 }

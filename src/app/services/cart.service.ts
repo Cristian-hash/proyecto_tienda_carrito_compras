@@ -18,11 +18,11 @@ export class CartService {
   getTotal(): Observable<number> {
     return this.http.get<number>(`${this.base}/total`);
   }
-  remove(id: number) {
-    return this.http.delete(`${this.base}/${id}`);
-  }
   add(product: Product) {
     return this.http.post(`${this.base}/productos`, product);
+  }
+  remove(id: number) {
+    return this.http.delete(`${this.base}/${id}`);
   }
   empty() {
     return this.http.delete(this.base);

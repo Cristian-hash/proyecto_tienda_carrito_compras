@@ -15,7 +15,7 @@ export class CartComponent {
   total = 0;
 
   constructor(private cartService: CartService) {}
-
+  //revision del metodo suscribe.
   ngOnInit() {
     this.cartService.getItems().subscribe((data) => (this.items = data));
     this.cartService.getTotal().subscribe((t) => (this.total = t));

@@ -13,25 +13,59 @@ import { CommonModule } from '@angular/common';
 export class CartComponent {
   items: Product[] = [];
   total = 0;
+  errorMessage = '';
 
   constructor(private cartService: CartService) {}
-  //revision del metodo suscribe.
+
   ngOnInit() {
-    this.cartService.getItems().subscribe((data) => (this.items = data));
-    this.cartService.getTotal().subscribe((t) => (this.total = t));
+    this.cargar();
     console.log('Items en carrito:', this.cartService.getItems());
   }
+
   saberTotal() {
     this.cartService.getTotal().subscribe((t) => (this.total = t));
   }
+
   eliminar(product: Product) {
-    this.cartService.remove(product.id).subscribe(() => {
-      this.ngOnInit();
+    this.cartService.remove(product.id).subscribe({
+      next: () => {
+        this.cargar();
+      },
+      error: (err) => {
+        console.error('Error eliminando producto', err);
+      },
     });
   }
+
   vaciar() {
-    this.cartService.empty().subscribe(() => {
-      this.ngOnInit();
+    this.cartService.empty().subscribe({
+      next: () => {
+        this.cargar();
+      },
+      error: (err) => {
+        console.error('Error vaciando carrito', err);
+      },
+    });
+  }
+
+  private cargar() {
+    this.cartService.getItems().subscribe({
+      next: (data) => {
+        this.items = data;
+      },
+      error: (err) => {
+        console.error('Error cargando items', err);
+        this.errorMessage = 'No se pudo cargar el carrito';
+      },
+    });
+
+    this.cartService.getTotal().subscribe({
+      next: (t) => {
+        this.total = t;
+      },
+      error: (err) => {
+        console.error('Error cargando total', err);
+      },
     });
   }
 }

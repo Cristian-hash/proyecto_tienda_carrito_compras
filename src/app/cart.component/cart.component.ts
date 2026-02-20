@@ -19,7 +19,15 @@ export class CartComponent {
 
   ngOnInit() {
     this.cargar();
-    console.log('Items en carrito:', this.cartService.getItems());
+    console.log(
+      'Items en carrito:',
+      this.cartService.getItems().subscribe({
+        next: (data) => {
+          this.items = data;
+          console.log('Items reales recibidos:', data);
+        },
+      }),
+    );
   }
 
   saberTotal() {

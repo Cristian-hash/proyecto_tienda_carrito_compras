@@ -3,9 +3,14 @@
 <ul>
   <li *ngFor="let item of items">
     {{ item.name }}
+
+    <button (click)="eliminar(item)">Eliminar Producto</button>
   </li>
 </ul>
 
 <p>Total: {{ total }}</p>
 
 <button (click)="saberTotal()">Recalcular total</button>
+<br />
+<br />
+<button (click)="vaciar()">VACIAR TODO</button>

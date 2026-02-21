@@ -26,6 +26,9 @@ export class CartComponent {
           this.items = data;
           console.log('Items reales recibidos:', data);
         },
+        error: (err) => {
+          console.error('Error cargando items', err);
+        },
       }),
     );
   }

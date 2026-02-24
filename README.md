@@ -17,7 +17,7 @@ Este proyecto simula una tienda con carrito de compras.
 
 Usuario → Angular → HTTP → Spring → Angular
 
-## Flujo detallado
+## DIA 1 Flujo detallado
 
 Usuario
 → Click en botón
@@ -28,3 +28,16 @@ Usuario
 → Service (lógica)
 → Respuesta
 → UI se actualiza
+
+## DIA 2 Pedido elegido: Agregar producto al carrito
+
+Usuario
+→ Click
+→ HTML
+→ Component TS
+→ Service Angular
+→ HTTP
+→ Controller
+→ Service backend
+→ Response
+→ UI

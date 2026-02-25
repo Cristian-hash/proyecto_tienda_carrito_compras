@@ -18,7 +18,9 @@ export class CartService {
   getTotal(): Observable<number> {
     return this.http.get<number>(`${this.base}/total`);
   }
+  //4-Service Angular: coordina y envía el pedido.
   add(product: Product) {
+    //5-HTTP: transporta el request.
     return this.http.post(`${this.base}/productos`, product);
   }
   remove(id: number) {

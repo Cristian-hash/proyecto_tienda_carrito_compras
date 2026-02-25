@@ -10,11 +10,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./product-item.component.css'],
 })
 export class ProductItemComponent {
-  //dato que el padre le da al hijo.
+  // dato que el padre le da al hijo.
   @Input() product!: Product;
-  //evento que el hijo emite al padre (EventEmitter).
+  // evento que el hijo emite al padre (EventEmitter).
   @Output() add = new EventEmitter<Product>();
-
+  //3-Component TS: interpreta la intención del usuario.
   addProduct() {
     this.add.emit(this.product);
   }

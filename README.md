@@ -41,3 +41,19 @@ Usuario
 → Service backend
 → Response
 → UI
+
+## DIA 3 Angular bien ordenado
+
+Padre
+├─ tiene datos
+├─ decide acciones
+└─ llama services
+↓
+Service
+├─ coordina
+├─ comunica
+└─ llama backend
+↓
+Hijo
+├─ muestra
+└─ emite eventos

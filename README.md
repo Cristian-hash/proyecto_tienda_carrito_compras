@@ -63,3 +63,13 @@ Hijo
 CORS es una regla del navegador configurada desde el backend para decidir qué frontends pueden usar la API.
 
 ## DIA 6 Estado actual del sistema
+
+## DIA 8 REFRANTOR
+
+- [ ] Arreglé console.log que imprimía Subscription en cart.component.ngOnInit
+- [ ] Eliminé imports y comentarios innecesarios en products.component.ts
+- [ ] Corregí styleUrl → styleUrls en App component
+- [ ] Añadí constructor vacío en Producto.java para compatibilidad Jackson
+- [ ] Usé nuevos nombres: obtenerProductos()
+- [ ] (Opcional) Reemplacé System.out por Logger o quité prints
+- [ ] Probé flujo: POST /carrito/productos, GET /carrito, GET /carrito/total, DELETE /carrito/{id}

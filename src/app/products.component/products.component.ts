@@ -4,7 +4,6 @@ import { ProductItemComponent } from '../product-item.component/product-item.com
 import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
 import { OnInit } from '@angular/core';
 @Component({
   selector: 'app-products',
@@ -15,7 +14,6 @@ import { OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
-  //borrar total: number = 0;
 
   constructor(
     private cartService: CartService,
@@ -23,7 +21,6 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    //borrar   this.total = this.gettotal();
     this.loadProducts();
   }
 

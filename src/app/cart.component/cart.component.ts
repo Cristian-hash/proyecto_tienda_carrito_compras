@@ -53,6 +53,7 @@ export class CartComponent {
     this.cartService.getItems().subscribe({
       next: (data) => {
         this.items = data;
+        console.log('[Cart] items cargados:', data);
       },
       error: (err) => {
         console.error('Error cargando items', err);

@@ -57,3 +57,9 @@ Service
 Hijo
 ├─ muestra
 └─ emite eventos
+
+## DIA 5 CORS
+
+CORS es una regla del navegador configurada desde el backend para decidir qué frontends pueden usar la API.
+
+## DIA 6 Estado actual del sistema

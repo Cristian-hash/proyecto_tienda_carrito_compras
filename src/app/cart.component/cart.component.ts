@@ -19,18 +19,8 @@ export class CartComponent {
 
   ngOnInit() {
     this.cargar();
-    console.log(
-      'Items en carrito:',
-      this.cartService.getItems().subscribe({
-        next: (data) => {
-          this.items = data;
-          console.log('Items reales recibidos:', data);
-        },
-        error: (err) => {
-          console.error('Error cargando items', err);
-        },
-      }),
-    );
+    // Si necesitas ver los items en consola:
+    this.cartService.getItems().subscribe((data) => console.log('Items reales recibidos:', data));
   }
 
   saberTotal() {

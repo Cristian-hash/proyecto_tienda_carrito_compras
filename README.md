@@ -99,3 +99,7 @@ Service (reglas del negocio)
 v
 [ HOY ] List en memoria
 [ FUTURO ] Base de datos
+
+## DIA 10 - Como explicarlo en entrevista
+
+Es una mini tienda pensada para aprender arquitectura limpia entre Angular y Spring Boot, con decisiones conscientes y preparada para crecer.

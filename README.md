@@ -73,3 +73,29 @@ CORS es una regla del navegador configurada desde el backend para decidir qué f
 - [ ] Usé nuevos nombres: obtenerProductos()
 - [ ] (Opcional) Reemplacé System.out por Logger o quité prints
 - [ ] Probé flujo: POST /carrito/productos, GET /carrito, GET /carrito/total, DELETE /carrito/{id}
+
+## DIA 9 Preparar camino a Base de Datos
+
+-Solo pensar y documentar cómo debería verse el sistema cuando tenga base de datos.
+-Esto evita reescribir todo después.
+
+Futuro con DB (conceptual)
+CarritoService
+├── obtenerCarritoPorUsuario()
+├── agregarItem(carritoId, productoId)
+├── eliminarItem(itemId)
+├── calcularTotal(carritoId)
+
+Futuro con DB (conceptual)
+Frontend (Angular)
+|
+| HTTP
+v
+Controller (Spring)
+|
+v
+Service (reglas del negocio)
+|
+v
+[ HOY ] List en memoria
+[ FUTURO ] Base de datos

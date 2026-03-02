@@ -58,11 +58,43 @@ Hijo
 ├─ muestra
 └─ emite eventos
 
+## Día 4 — Spring Boot bien ordenado
+
+El Controller solo recibe peticiones; el Service contiene TODA la lógica del negocio.
+
 ## DIA 5 CORS
 
 CORS es una regla del navegador configurada desde el backend para decidir qué frontends pueden usar la API.
 
 ## DIA 6 Estado actual del sistema
+
+La memoria sirve para aprender; la base de datos sirve para construir sistemas reales.
+
+## Día 7 — Qué pasaría con 2 usuarios
+
+El sistema no tiene identidad.
+
+No existen:
+
+usuarios
+
+carritos separados
+
+persistencia
+
+contexto
+
+¿Por qué hoy NO escala?
+
+Porque:
+
+Hay un solo carrito
+
+Vive en memoria
+
+Es compartido
+
+No distingue usuarios
 
 ## DIA 8 REFRANTOR
 
@@ -103,3 +135,39 @@ v
 ## DIA 10 - Como explicarlo en entrevista
 
 Es una mini tienda pensada para aprender arquitectura limpia entre Angular y Spring Boot, con decisiones conscientes y preparada para crecer.
+
+## DIA 11- README — ¿Por qué usar Base de Datos?
+
+Estado actual
+
+El carrito vive en memoria (RAM).
+
+Existe un solo carrito.
+
+Los datos se pierden al reiniciar el backend.
+
+Problema
+
+La memoria:
+
+❌ No persiste datos
+
+❌ No soporta múltiples usuarios
+
+❌ No escala
+
+Qué resuelve una DB
+
+✅ Persistencia real
+
+✅ Un carrito por usuario
+
+✅ Soporte multiusuario
+Decisión
+
+No se usa DB aún a propósito.
+Primero se domina el flujo y las reglas del negocio.
+
+Próximo paso
+
+Diseñar entidades antes de integrar la base de datos.

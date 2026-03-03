@@ -171,3 +171,11 @@ Primero se domina el flujo y las reglas del negocio.
 Próximo paso
 
 Diseñar entidades antes de integrar la base de datos.
+
+## DIA 12 Modelo inicial de datos
+
+- Usuario: identidad del sistema
+- Carrito: pertenece a un usuario
+- ItemCarrito: representa productos dentro del carrito
+
+Este modelo prepara el camino para persistencia en DB.
